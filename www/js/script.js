@@ -14,15 +14,15 @@ $(function(){
   });
 
   navigator.geolocation.getCurrentPosition((position) => {
-    L.mapquest.key = 'BPYBTKxImVS6W97iL4Xy0TMQPhZ0aI7x';
+    L.mapquest.key = 'BPYBTKxImVS6W97iL4Xy0TMQPhZ0aI7x'; // key do mapa
     let map = L.mapquest.map('map', {
       center: [position.coords.latitude, position.coords.longitude],//[37.7749, -122.4194],
       layers: L.mapquest.tileLayer('map'),
       zoom: 17
     });
 
-    map.addControl(L.mapquest.control());
-    L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+    map.addControl(L.mapquest.control()); // control do mapa
+    L.marker([position.coords.latitude, position.coords.longitude]).addTo(map); // marker da localização atual
   });
 
 });
